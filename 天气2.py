@@ -44,9 +44,9 @@ for city in citys:
     h = ['城市', '月份', '平均高温', '平均低温', '极端高温', '极端低温', '平均空气质量指数', '空气最好', '空气最好日期', '空气最差', '空气最差日期']
     ws.append(h)
     for month in range(1,13):
-        one_line = []
-        one_line.append(city)
-        one_line.append(month)
+        one_line = [city,month]
+        # one_line.append(city)
+        # one_line.append(month)
         # res = None
         # while True:
         #     print(res.status_code)
@@ -62,7 +62,7 @@ for city in citys:
         time.sleep(0.5)
         parts = html_ds.xpath('//li')
         back = get_xp(parts)
-        one_line = one_line + back
+        one_line.extend(back)#使用 one_line.extend(back)，这种方法直接在 one_line 的原始列表上进行操作，不会创建新的列表对象
         print(one_line)
         ws.append(one_line)
     time.sleep(10)
