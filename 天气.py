@@ -39,8 +39,8 @@ for city in citys:
         html_ds = etree.HTML(res.content)
         time.sleep(2)
 
-        parts = html_ds.xpath('//tr/td')
-        back = get_xp(parts)
+        html_parts = html_ds.xpath('//tr/td')
+        back = get_xp(html_parts)
         one_line.extend(back)#使用 one_line.extend(back)，这种方法直接在 one_line 的原始列表上进行操作，不会创建新的列表对象
         print(one_line)
         ws.append(one_line)
