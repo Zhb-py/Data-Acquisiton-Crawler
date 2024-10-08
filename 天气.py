@@ -18,11 +18,11 @@ def get_bs64():
     return t64
 
 def get_xp(parts):
-    data = str(parts[0].xpath('.//text()')[0])
-    high = str(parts[1].xpath('.//text()')[1])
-    low = str(parts[2].xpath('.//text()')[2])
-    weather = str(parts[3].xpath('.//text()')[3])
-    trend = str(parts[4].xpath('.//text()')[4])
+    data = str(parts[0].xpath('.//text()'))
+    high = str(parts[1].xpath('.//text()'))
+    low = str(parts[2].xpath('.//text()'))
+    weather = str(parts[3].xpath('.//text()'))
+    trend = str(parts[4].xpath('.//text()'))
     return [data, high, low, weather, trend]
 for city in citys:
     wb = Workbook()
